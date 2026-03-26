@@ -7,11 +7,20 @@ html {
 }
 
 body {
-  background-color: #fdf8f4;
+  background-color: #0a0a0f;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #fdf8f4; }
-::-webkit-scrollbar-thumb { background: #c4b8ac; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #a89a8c; }
+::-webkit-scrollbar-track { background: #0a0a0f; }
+::-webkit-scrollbar-thumb { background: #2a2a35; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a48; }
