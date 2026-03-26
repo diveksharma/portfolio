@@ -20,12 +20,6 @@ export default function Portfolio() {
             <a href="#about" className="hover:text-white transition-colors">About</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </div>
-          <a
-            href="mailto:diveksharm@gmail.com"
-            className="bg-[#6d75e3] hover:bg-[#5560d4] text-white text-sm font-semibold px-4 py-1.5 rounded-lg transition-colors"
-          >
-            Hire me
-          </a>
         </div>
       </nav>
 
@@ -113,16 +107,16 @@ export default function Portfolio() {
               <h3 className="font-[family-name:var(--font-raleway)] font-semibold text-lg text-white mb-3">Frontend</h3>
               <p className="text-sm text-gray-400 leading-relaxed">
                 React, Next.js, TypeScript, Tailwind CSS.
-                Clean, maintainable, production-ready code that your team can build on.
+                Turning Figma files into real, working code.
               </p>
             </div>
 
-            <div className="bg-[#6d75e3] rounded-xl p-7 border border-[#5560d4]">
-              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center mb-5">
-                <Sparkles className="w-5 h-5 text-white" />
+            <div className="bg-white/5 rounded-xl p-7 border border-white/10">
+              <div className="w-10 h-10 rounded-lg bg-[#6d75e3]/10 flex items-center justify-center mb-5">
+                <Sparkles className="w-5 h-5 text-[#6d75e3]" />
               </div>
               <h3 className="font-[family-name:var(--font-raleway)] font-semibold text-lg text-white mb-3">AI-powered</h3>
-              <p className="text-sm text-white/80 leading-relaxed">
+              <p className="text-sm text-gray-400 leading-relaxed">
                 I use Claude Code daily and integrate AI-powered features into products,
                 from content analysis to intelligent dashboards.
               </p>
@@ -235,7 +229,7 @@ export default function Portfolio() {
               href="https://social-one-demo-at6ue0wxl-diveksharmas-projects.vercel.app/dashboard"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#6d75e3] hover:bg-[#5560d4] text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/10 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors"
             >
               View live demo →
             </a>
@@ -376,7 +370,7 @@ export default function Portfolio() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="mailto:diveksharm@gmail.com"
-              className="bg-[#6d75e3] hover:bg-[#5560d4] text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
+              className="bg-white/10 hover:bg-white/15 border border-white/10 text-white font-semibold px-6 py-3 rounded-lg transition-colors text-sm"
             >
               diveksharm@gmail.com →
             </a>
