@@ -16,7 +16,7 @@ export default function Portfolio() {
             DS
           </a>
           <div className="hidden sm:flex items-center gap-8 text-sm font-medium text-gray-400">
-            <a href="#work" className="hover:text-white transition-colors">Work</a>
+            <a href="#work" className="hover:text-white transition-colors">Project</a>
             <a href="#about" className="hover:text-white transition-colors">About</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </div>
