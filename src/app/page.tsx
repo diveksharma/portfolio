@@ -234,6 +234,9 @@ export default function Portfolio() {
               A social media analytics platform connecting YouTube, TikTok, Instagram, and Facebook
               into one unified dashboard with AI-powered content analysis, growth trends, and audience insights.
             </p>
+            <p className="text-gray-500 text-sm leading-relaxed mb-6">
+              This is an active project currently in development. Design, features, and overall polish are still being worked on and will continue to evolve.
+            </p>
 
             <ul className="space-y-3 mb-8">
               {[
