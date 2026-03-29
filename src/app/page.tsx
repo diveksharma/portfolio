@@ -178,7 +178,7 @@ export default function Portfolio() {
         <div className="max-w-5xl mx-auto px-6 py-20">
           <p className="text-xs font-semibold uppercase tracking-widest text-[#6d75e3] mb-3">What I bring</p>
           <h2 className="font-[family-name:var(--font-raleway)] font-bold text-2xl text-white mb-12">
-            The full picture — design <em>and</em> code
+            The full picture: design <em>and</em> code
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -286,7 +286,7 @@ export default function Portfolio() {
               {
                 company: 'Atech Info Services AB',
                 role: 'UI/UX Designer · Frontend Developer',
-                period: 'February 2024 – Present',
+                period: 'February 2024 to Present',
                 points: [
                   'Building the frontend of a CRM system with Vue.js, focusing on performance and scalability',
                   'Redesigning the company website from the ground up, Figma to deployed code',
@@ -296,7 +296,7 @@ export default function Portfolio() {
               {
                 company: 'Eljun AB',
                 role: 'UI/UX Designer · Web Developer',
-                period: 'April 2023 – September 2023',
+                period: 'April 2023 to September 2023',
                 points: [
                   'Redesigned the company website and app in Figma and Webflow',
                   'Conducted UX research and usability testing to identify and resolve pain points',
@@ -306,7 +306,7 @@ export default function Portfolio() {
               {
                 company: 'Smart Cash',
                 role: 'Junior Frontend Developer · UI/UX Designer',
-                period: 'May 2021 – June 2022',
+                period: 'May 2021 to June 2022',
                 points: [
                   'Led frontend development of a booking system using Vue.js and Tailwind CSS',
                   'Rebuilt the company e-commerce website in collaboration with an external team',
