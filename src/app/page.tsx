@@ -2,6 +2,110 @@
 
 import AnoAI from '@/components/ui/animated-shader-background';
 import { Paintbrush, Code, Sparkles, Wrench } from 'lucide-react';
+import { useState } from 'react';
+import Image from 'next/image';
+
+const screenshots = [
+  {
+    file: '/screenshots/social-one/01-dashboard-overview.png',
+    label: 'Overview',
+    title: 'Cross-Platform Dashboard',
+    description: 'A single view of 107.7K total followers across all 4 platforms. The AI Insights panel surfaces actionable findings on demand.',
+  },
+  {
+    file: '/screenshots/social-one/02-dashboard-youtube.png',
+    label: 'YouTube',
+    title: 'YouTube Analytics',
+    description: '53.1K subscribers and 5.5M lifetime views broken down by video — spot which content drove spikes instantly.',
+  },
+  {
+    file: '/screenshots/social-one/03-dashboard-tiktok.png',
+    label: 'TikTok',
+    title: 'TikTok Performance',
+    description: '38.9K followers and 724K total likes charted over time. Video-level data reveals engagement velocity.',
+  },
+  {
+    file: '/screenshots/social-one/04-dashboard-instagram.png',
+    label: 'Instagram',
+    title: 'Instagram Engagement',
+    description: '15.7K followers with a per-post like timeline showing content cadence patterns at a glance.',
+  },
+  {
+    file: '/screenshots/social-one/05-dashboard-facebook.png',
+    label: 'Facebook',
+    title: 'Facebook Page Insights',
+    description: '35.8K fans and 19.1K impressions tracked daily. Boosted-post windows stand out as clear spikes.',
+  },
+  {
+    file: '/screenshots/social-one/06-analytics.png',
+    label: 'Analytics',
+    title: 'Deep-Dive Analytics',
+    description: 'Four charts in sync: per-platform engagement rate, Platform Health Score, Content Velocity, and Total Reach donut.',
+  },
+  {
+    file: '/screenshots/social-one/07-analytics-growth.png',
+    label: 'Growth',
+    title: 'Growth Correlation',
+    description: 'All four platforms overlaid on one chart — see cross-platform lift patterns when a TikTok video goes viral.',
+  },
+];
+
+function ScreenshotShowcase() {
+  const [active, setActive] = useState(0);
+  const current = screenshots[active];
+
+  return (
+    <div className="rounded-xl border border-dark-border bg-dark-card shadow-2xl overflow-hidden">
+      {/* Browser bar */}
+      <div className="flex items-center gap-3 px-4 py-3 bg-dark-surface border-b border-dark-border">
+        <div className="flex gap-1.5">
+          <div className="w-3 h-3 rounded-full bg-red-400/70" />
+          <div className="w-3 h-3 rounded-full bg-yellow-400/70" />
+          <div className="w-3 h-3 rounded-full bg-green-400/70" />
+        </div>
+        <div className="flex-1 bg-dark-card rounded-md px-3 py-1 text-xs text-gray-500 font-mono truncate">
+          social-one-demo.vercel.app/dashboard
+        </div>
+      </div>
+
+      {/* Tab strip */}
+      <div className="flex gap-0.5 px-3 pt-2 overflow-x-auto bg-dark-surface border-b border-dark-border" style={{ scrollbarWidth: 'none' }}>
+        {screenshots.map((s, i) => (
+          <button
+            key={s.label}
+            onClick={() => setActive(i)}
+            className={`shrink-0 px-3 py-1.5 text-[11px] font-medium rounded-t transition-colors ${
+              active === i
+                ? 'bg-dark-card text-[#6d75e3] border border-b-0 border-dark-border'
+                : 'text-gray-500 hover:text-gray-300'
+            }`}
+          >
+            {s.label}
+          </button>
+        ))}
+      </div>
+
+      {/* Screenshot */}
+      <div className="relative w-full aspect-[16/10] bg-[#0a0a0a] overflow-hidden">
+        <Image
+          key={active}
+          src={current.file}
+          alt={current.title}
+          fill
+          className="object-cover object-top"
+          sizes="(max-width: 1024px) 100vw, 960px"
+          priority={active === 0}
+        />
+      </div>
+
+      {/* Caption */}
+      <div className="px-5 py-3 bg-dark-surface border-t border-dark-border">
+        <p className="text-sm font-semibold text-white mb-0.5">{current.title}</p>
+        <p className="text-xs text-gray-400 leading-relaxed">{current.description}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function Portfolio() {
   return (
@@ -132,69 +236,10 @@ export default function Portfolio() {
           Social-One
         </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <ScreenshotShowcase />
 
-          {/* Browser mockup */}
-          <div className="rounded-xl border border-dark-border bg-dark-card shadow-2xl overflow-hidden">
-            <div className="flex items-center gap-3 px-4 py-3 bg-dark-surface border-b border-dark-border">
-              <div className="flex gap-1.5">
-                <div className="w-3 h-3 rounded-full bg-red-400" />
-                <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                <div className="w-3 h-3 rounded-full bg-green-400" />
-              </div>
-              <div className="flex-1 bg-dark-card rounded-md px-3 py-1 text-xs text-gray-500 font-mono truncate">
-                social-one-demo.vercel.app/dashboard
-              </div>
-            </div>
-            <div className="flex" style={{ height: '280px' }}>
-              <div className="w-14 bg-gray-900 flex flex-col items-center py-4 gap-3 shrink-0">
-                <div className="w-8 h-8 rounded-lg bg-white/10 mb-2" />
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div key={i} className={`w-7 h-7 rounded-lg ${i === 1 ? 'bg-white/25' : 'bg-white/8'}`} />
-                ))}
-              </div>
-              <div className="flex-1 bg-[#0d0d12] p-4 overflow-hidden">
-                <div className="grid grid-cols-4 gap-2 mb-4">
-                  {[
-                    { val: '42.3K', label: 'Followers', color: 'bg-[#6d75e3]' },
-                    { val: '1.2M', label: 'Views', color: 'bg-blue-400' },
-                    { val: '8.4%', label: 'Eng. Rate', color: 'bg-green-400' },
-                    { val: '+847', label: 'This week', color: 'bg-orange-400' },
-                  ].map((card) => (
-                    <div key={card.label} className="bg-dark-card rounded-lg p-2.5 border border-dark-border shadow-sm">
-                      <div className={`w-5 h-1.5 rounded-full ${card.color} mb-2 opacity-70`} />
-                      <div className="font-semibold text-xs text-white">{card.val}</div>
-                      <div className="text-[9px] text-gray-500 mt-0.5">{card.label}</div>
-                    </div>
-                  ))}
-                </div>
-                <div className="bg-dark-card rounded-lg p-3 border border-dark-border shadow-sm">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="w-16 h-2 rounded-full bg-dark-border" />
-                    <div className="flex gap-1">
-                      {['7d', '30d', '90d'].map((l, i) => (
-                        <div key={l} className={`text-[9px] px-2 py-0.5 rounded font-medium ${i === 1 ? 'bg-[#6d75e3] text-white' : 'text-gray-500'}`}>{l}</div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-end gap-0.5 h-20">
-                    {[35, 50, 38, 62, 48, 70, 55, 80, 65, 88, 72, 95, 82, 90].map((h, i) => (
-                      <div
-                        key={i}
-                        className="flex-1 rounded-t-sm transition-all"
-                        style={{
-                          height: `${h}%`,
-                          background: i >= 10 ? '#6d75e3' : '#1e1e26',
-                        }}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Project details */}
+        {/* Project details */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
           <div>
             <p className="text-gray-400 leading-relaxed mb-6">
               A social media analytics platform connecting YouTube, TikTok, Instagram, and Facebook
@@ -216,7 +261,9 @@ export default function Portfolio() {
                 </li>
               ))}
             </ul>
+          </div>
 
+          <div>
             <div className="flex flex-wrap gap-2 mb-8">
               {['Next.js', 'React', 'TypeScript', 'Supabase', 'Claude API', 'React Query', 'Tailwind CSS'].map((tag) => (
                 <span key={tag} className="bg-purple-light text-[#6d75e3] text-xs font-medium px-3 py-1 rounded-md">
@@ -226,7 +273,7 @@ export default function Portfolio() {
             </div>
 
             <a
-              href="https://social-one-demo-at6ue0wxl-diveksharmas-projects.vercel.app/dashboard"
+              href="https://social-one-demo.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/10 text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-colors"
