@@ -83,6 +83,7 @@ function ScreenshotShowcase() {
           className="object-cover object-top"
           sizes="(max-width: 1024px) 100vw, 960px"
           priority={active === 0}
+          unoptimized
         />
       </div>
 
