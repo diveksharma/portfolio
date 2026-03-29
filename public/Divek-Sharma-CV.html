@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divek Sharma — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset ─────────────────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    a { color: #2b80ff; text-decoration: underline; }
+    a:hover { opacity: 0.8; }
+    ul { list-style: disc; padding-left: 14px; }
+    li { margin-bottom: 3px; }
+
+    /* ─── Page ───────────────────────────────────────────────────────────────── */
+    html, body {
+      background: #ede8e0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 9.5px;
+      color: #2d2d2d;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      background: #fff7f0;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      padding: 28px 32px 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.12);
+    }
+
+    /* ─── Decorative accents (kept tasteful) ─────────────────────────────────── */
+    .page::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: 120px;
+      width: 140px;
+      height: 140px;
+      background: rgba(0, 30, 200, 0.18);
+      border-radius: 10px;
+      transform: rotate(23deg);
+      pointer-events: none;
+    }
+    .page::after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: 60px;
+      width: 100px;
+      height: 100px;
+      background: rgba(0, 30, 180, 0.10);
+      border-radius: 8px;
+      transform: rotate(23deg);
+      pointer-events: none;
+    }
+
+    /* ─── Header ─────────────────────────────────────────────────────────────── */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .header-left h1 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      color: #101010;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .header-left .subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-size: 8.5px;
+      font-weight: 400;
+      color: #2b80ff;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 8.5px;
+      color: #101010;
+      padding-top: 4px;
+    }
+
+    .header-right .contact-links {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-bottom: 5px;
+    }
+
+    .header-right .contact-info {
+      color: #4f4f4f;
+      line-height: 1.7;
+    }
+
+    /* ─── Divider ─────────────────────────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid #d0c8be;
+      margin: 8px 0 12px;
+    }
+
+    /* ─── Body grid ──────────────────────────────────────────────────────────── */
+    .body-grid {
+      display: grid;
+      grid-template-columns: 1fr 155px;
+      gap: 0 20px;
+      align-items: start;
+    }
+
+    /* ─── Section headings ───────────────────────────────────────────────────── */
+    h2 {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: #6d75e3;
+      margin-bottom: 8px;
+    }
+
+    section {
+      margin-bottom: 16px;
+    }
+
+    /* ─── Skills ─────────────────────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px 12px;
+    }
+
+    .skill-group h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 8px;
+      color: #6d75e3;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 4px;
+    }
+
+    .skill-group ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .skill-group li {
+      font-size: 9px;
+      color: #2d2d2d;
+      line-height: 1.65;
+      margin-bottom: 0;
+    }
+
+    /* ─── Experience / Projects ──────────────────────────────────────────────── */
+    .entry {
+      margin-bottom: 13px;
+    }
+
+    .entry-header {
+      margin-bottom: 4px;
+    }
+
+    .company-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 9.5px;
+      color: #101010;
+    }
+
+    .role-title {
+      font-size: 8.5px;
+      color: #6d75e3;
+      font-weight: 400;
+      margin-top: 1px;
+    }
+
+    .date-range {
+      font-size: 7.5px;
+      color: #4f4f4f;
+      font-weight: 400;
+      margin-top: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .tech-stack {
+      font-size: 8px;
+      color: #6d75e3;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .entry ul {
+      font-size: 8.5px;
+      color: #2d2d2d;
+      line-height: 1.55;
+    }
+
+    .entry li {
+      margin-bottom: 2px;
+    }
+
+    /* ─── Sidebar ─────────────────────────────────────────────────────────────── */
+    .sidebar section {
+      margin-bottom: 14px;
+    }
+
+    .sidebar h2 {
+      font-size: 12px;
+    }
+
+    .sidebar p,
+    .sidebar li {
+      font-size: 9px;
+      color: #101010;
+      line-height: 1.8;
+      list-style: none;
+      padding: 0;
+    }
+
+    /* ─── Education ──────────────────────────────────────────────────────────── */
+    .edu-entry {
+      margin-bottom: 10px;
+    }
+
+    .edu-entry .school {
+      font-weight: 500;
+      font-size: 9px;
+      color: #101010;
+    }
+
+    .edu-entry .edu-date {
+      font-size: 7.5px;
+      color: #4f4f4f;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+      margin-top: 1px;
+    }
+
+    .edu-entry .edu-desc {
+      font-size: 8.5px;
+      color: #2d2d2d;
+      line-height: 1.55;
+      margin-top: 3px;
+    }
+
+    /* ─── Sidebar accent shape ───────────────────────────────────────────────── */
+    .sidebar-accent {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .accent-shape {
+      width: 80px;
+      height: 80px;
+      background: rgba(42, 128, 255, 0.18);
+      border-radius: 8px;
+      transform: rotate(-31deg);
+    }
+
+    /* ─── Print ──────────────────────────────────────────────────────────────── */
+    @media print {
+      html, body { background: none; margin: 0; }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+        min-height: 100%;
+        padding: 20px 26px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ─── Header ─────────────────────────────────────────────────────────── -->
+  <header>
+    <div class="header-left">
+      <h1>Divek Sharma</h1>
+      <p class="subtitle">UX UI DESIGNER &nbsp;|&nbsp; FRONTEND DEVELOPER</p>
+    </div>
+    <div class="header-right">
+      <div class="contact-links">
+        <a href="https://portfolio-diveksharmas-projects.vercel.app/">My portfolio</a>
+        <a href="https://www.linkedin.com/in/divek-sharma-0203i5/">LinkedIn</a>
+        <a href="https://github.com/diveksharma">GitHub</a>
+      </div>
+      <div class="contact-info">
+        <div>076 016 20 33</div>
+        <div>diveksharm@gmail.com</div>
+        <div>Stockholm</div>
+      </div>
+    </div>
+  </header>
+
+  <hr class="divider" />
+
+  <!-- ─── Body ───────────────────────────────────────────────────────────── -->
+  <div class="body-grid">
+
+    <!-- ── Main column ──────────────────────────────────────────────────── -->
+    <main>
+
+      <!-- Skills -->
+      <section>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Design</h3>
+            <ul>
+              <li>Figma</li>
+              <li>User Experience Design</li>
+              <li>User Interface Design</li>
+              <li>Interaction Design</li>
+              <li>Responsive Web Design</li>
+              <li>Web / App Design</li>
+              <li>Wireframing &amp; Prototyping</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML &amp; CSS</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>React / Next.js</li>
+              <li>Vue.js</li>
+              <li>React Native</li>
+              <li>Redux</li>
+              <li>Tailwind CSS</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>AI &amp; Dev Tools</h3>
+            <ul>
+              <li>Claude Code</li>
+              <li>Anthropic Claude API</li>
+              <li>AI-Assisted Development</li>
+              <li>Prompt Engineering</li>
+              <li>Node.js / Express</li>
+              <li>PostgreSQL / Supabase</li>
+              <li>MongoDB</li>
+              <li>Git / NPM</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>CMS &amp; No-code</h3>
+            <ul>
+              <li>Webflow</li>
+              <li>WordPress</li>
+              <li>Elementor</li>
+              <li>Squarespace</li>
+              <li>Shopify</li>
+              <li>Framer</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section>
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Atech Info Services AB</div>
+            <div class="role-title">UI UX Designer | Front-end Developer</div>
+            <div class="date-range">February 2024 – Current</div>
+          </div>
+          <ul>
+            <li>Developing the frontend of a CRM system with Vue.js, focused on performance, scalability, and clean component architecture.</li>
+            <li>Redesigned and built the company's upcoming website end-to-end, from Figma designs through to production deployment.</li>
+            <li>Leading UX/UI improvements — creating user flows, interactive prototypes, and a consistent design system in Figma.</li>
+            <li>Writing modular, scalable code aligned with frontend best practices and participating in code reviews.</li>
+            <li>Debugging and optimising existing features to enhance functionality and user experience.</li>
+            <li>Collaborating closely with design and product teams to ensure usability and design consistency across the platform.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">D&amp;D Group Sweden AB</div>
+            <div class="role-title">Web Developer</div>
+            <div class="date-range">October 2023 – December 2023</div>
+          </div>
+          <ul>
+            <li>Developed and launched the company's website with a modern, responsive design.</li>
+            <li>Implemented new features and improved mobile responsiveness across all device breakpoints.</li>
+            <li>Delivered brand-consistent, visually appealing layouts aligned with current design standards.</li>
+            <li>Analysed site performance and user feedback, applying UX improvements to enhance usability.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Eljun AB</div>
+            <div class="role-title">UI UX Designer | Web Developer</div>
+            <div class="date-range">April 2023 – September 2023</div>
+          </div>
+          <ul>
+            <li>Redesigned the company website and app in Figma and Webflow, significantly improving visual appeal and usability.</li>
+            <li>Developed a fully responsive website integrating modern design principles for a seamless user journey.</li>
+            <li>Conducted UX research and usability studies to identify user needs and optimise product design.</li>
+            <li>Collaborated with the marketing team to create visual content for LinkedIn, SEO campaigns, and newsletters.</li>
+            <li>Delivered design insights and creative solutions aligned with business goals.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Rikaro AB</div>
+            <div class="role-title">UX UI Designer</div>
+            <div class="date-range">December 2022 – March 2023</div>
+          </div>
+          <ul>
+            <li>Co-developed a mobile app aimed at simplifying social gatherings and event planning.</li>
+            <li>Designed and prototyped the full UI/UX in Figma, ensuring an intuitive, visually appealing, and responsive experience.</li>
+            <li>Collaborated closely on feature development to build a cohesive product aligned with user needs.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Eitruim</div>
+            <div class="role-title">Web Developer | UI UX Designer</div>
+            <div class="date-range">August 2022 – October 2022</div>
+          </div>
+          <ul>
+            <li>Redesigned and developed a modern, responsive website for an industrial client using WordPress and Elementor.</li>
+            <li>Gathered requirements through regular client meetings, maintaining alignment with business goals from concept to deployment.</li>
+            <li>Delivered a visually polished, functional site tailored to the client's industry and brand standards.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Smart Cash</div>
+            <div class="role-title">Junior Frontend Developer | UI/UX Designer</div>
+            <div class="date-range">May 2021 – June 2022</div>
+          </div>
+          <ul>
+            <li>Led frontend development of a booking system application using Vue.js and Tailwind CSS.</li>
+            <li>Rebuilt the company's e-commerce website from scratch, collaborating with an external development team.</li>
+            <li>Contributed UI/UX design across multiple products, improving user journeys and design consistency.</li>
+            <li>Relaunched and managed the company's social media marketing channels.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section>
+        <h2>Projects</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Social One — Social Media Analytics Platform</div>
+            <div class="tech-stack">Next.js · React · TypeScript · Tailwind CSS · Supabase · PostgreSQL · Recharts · YouTube API · TikTok API · Instagram API · Facebook API · Anthropic Claude API · Claude Code · Vercel</div>
+          </div>
+          <ul>
+            <li>Built a full-stack multi-platform analytics dashboard from scratch, connecting YouTube, TikTok, Instagram, and Facebook APIs into a single unified view.</li>
+            <li>Designed a PostgreSQL schema with Row Level Security (RLS), a daily cron-based snapshot system, and per-content analytics tracking (views, likes, shares, reach, impressions).</li>
+            <li>Architected a React Query hook factory pattern with server-side HydrationBoundary prefetching — eliminating client-side loading states and improving perceived performance.</li>
+            <li>Designed and deployed an AI content analysis pipeline using the Anthropic Claude API and advanced prompt engineering — generating performance summaries, audience insights, and cross-platform content profiles from raw analytics data.</li>
+            <li>Developed the entire platform using Claude Code (AI agent-assisted development), integrating AI into architecture decisions, debugging, and implementation workflows throughout the build.</li>
+            <li>Implemented GDPR-compliant data handling: AES-256 encrypted OAuth tokens, signed two-factor account deletion flow, automated data export pipeline, and a full privacy policy.</li>
+            <li>Shipped a live demo deployment with 90 days of realistic seed data, automated daily cron jobs, and CSP/rate-limiting security hardening — deployed to Vercel.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Built an E-commerce Site with Klarna Checkout</div>
+            <div class="tech-stack">JavaScript · React · Redux · FakeStore API · Express · Express-Handlebars · Klarna API · Git</div>
+          </div>
+          <ul>
+            <li>Built a fully functional e-commerce site using React and Redux (Thunk) for state management, integrating the FakeStore API for product data and dynamic user interactions.</li>
+            <li>Enabled customers to add, remove, and update cart items with real-time state updates.</li>
+            <li>Integrated Klarna Checkout via iframe to streamline secure payments.</li>
+            <li>Developed Node.js and Express backend with Express-Handlebars for server-side templating.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Built My Own REST API</div>
+            <div class="tech-stack">JavaScript · Node.js · Express · MongoDB · Mongoose · Git</div>
+          </div>
+          <ul>
+            <li>Created a RESTful API with full CRUD endpoints (GET, POST, PUT, DELETE).</li>
+            <li>Implemented BasicAuth for secure authentication and access control.</li>
+            <li>Integrated Mongoose for data modelling and validation against MongoDB.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <div class="company-name">Built a Spotify Clone</div>
+            <div class="tech-stack">JavaScript · React · Redux · Spotify API · CSS · Git</div>
+          </div>
+          <ul>
+            <li>Built a Spotify clone using React and Redux, integrating the Spotify API for authentication, playlist display, and playback control.</li>
+            <li>Designed a responsive UI delivering a user experience comparable to the native Spotify web app.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section>
+        <h2>Education</h2>
+
+        <div class="edu-entry">
+          <div class="school">The Language of Design: Form and Meaning — California Institute of the Arts</div>
+          <div class="edu-date">September 2022 – November 2022</div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="school">Innovation Through Design: Think, Make, Break, Repeat — The University of Sydney</div>
+          <div class="edu-date">June 2022 – August 2022</div>
+        </div>
+
+        <div class="edu-entry">
+          <div class="school">Techover Academy, Stockholm</div>
+          <div class="edu-date">November 2021 – February 2022</div>
+          <div class="edu-desc">Personally coached by industry consultants. Built web apps, custom system integrations, and RESTful APIs from scratch.</div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ── Sidebar ─────────────────────────────────────────────────────── -->
+    <aside class="sidebar">
+
+      <section>
+        <h2>Languages</h2>
+        <ul>
+          <li>Swedish</li>
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Tamil</li>
+        </ul>
+      </section>
+
+      <div class="sidebar-accent">
+        <div class="accent-shape"></div>
+      </div>
+
+    </aside>
+
+  </div><!-- /body-grid -->
+
+</div><!-- /page -->
+</body>
+</html>

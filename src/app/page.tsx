@@ -341,10 +341,11 @@ export default function Portfolio() {
 
           <div className="mt-8 text-center">
             <a
-              href="mailto:diveksharm@gmail.com"
-              className="text-sm font-medium text-[#6d75e3] hover:underline"
+              href="/Divek-Sharma-CV.html"
+              download="Divek-Sharma-CV.html"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/10 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors text-sm"
             >
-              Full CV available on request →
+              Download CV
             </a>
           </div>
         </div>
